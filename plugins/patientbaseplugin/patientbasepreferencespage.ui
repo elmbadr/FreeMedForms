@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>556</width>
-    <height>548</height>
+    <height>586</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -104,6 +104,27 @@ Warning: If you are using FreeMedForms over a network, this can lead to heavy ne
       <string>New patient</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0" colspan="2">
+       <widget class="QCheckBox" name="selectNewlyCreatedBox">
+        <property name="text">
+         <string>Select newly created patients</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="Line" name="line_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Default city</string>
+        </property>
+       </widget>
+      </item>
       <item row="2" column="1">
        <widget class="QLineEdit" name="defaultCity"/>
       </item>
@@ -117,26 +138,15 @@ Warning: If you are using FreeMedForms over a network, this can lead to heavy ne
       <item row="3" column="1">
        <widget class="QLineEdit" name="defaultZip"/>
       </item>
-      <item row="0" column="0" colspan="2">
-       <widget class="QCheckBox" name="selectNewlyCreatedBox">
+      <item row="4" column="0">
+       <widget class="QLabel" name="defaultCountryLabel">
         <property name="text">
-         <string>Select newly created patients</string>
+         <string>Default country</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Default city</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="2">
-       <widget class="Line" name="line_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
+      <item row="4" column="1">
+       <widget class="Views::CountryComboBox" name="defaultCountry"/>
       </item>
      </layout>
     </widget>
@@ -215,6 +225,11 @@ Warning: If you are using FreeMedForms over a network, this can lead to heavy ne
    <class>Utils::ColorButtonChooser</class>
    <extends>QPushButton</extends>
    <header location="global">utils/widgets/colorbuttonchooser.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Views::CountryComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">listviewplugin/countrycombobox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

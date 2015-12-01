@@ -145,6 +145,7 @@ void PatientBasePreferencesWidget::setDataToUi()
     ui->maxRecentPatient->setValue(settings()->value(Constants::S_RECENTPATIENT_MAX, 10).toInt());
     ui->defaultCity->setText(settings()->value(Constants::S_NEWPATIENT_DEFAULTCITY).toString());
     ui->defaultZip->setText(settings()->value(Constants::S_NEWPATIENT_DEFAULTZIP).toString());
+    ui->defaultCountry->setText(settings()->value(Constants::S_NEWPATIENT_DEFAULTCOUNTRY).toString());
 
     // find the id of the photo source in the combo box items
     const int photoSourceIndex = ui->comboDefaultPhotoSource->findData(
@@ -167,6 +168,7 @@ void PatientBasePreferencesWidget::saveToSettings(Core::ISettings *sets)
     s->setValue(Constants::S_RECENTPATIENT_MAX, ui->maxRecentPatient->value());
     s->setValue(Constants::S_NEWPATIENT_DEFAULTCITY, ui->defaultCity->text());
     s->setValue(Constants::S_NEWPATIENT_DEFAULTZIP, ui->defaultZip->text());
+    s->setValue(Constants::S_NEWPATIENT_DEFAULTCOUNTRY, ui->defaultCountry->text());
 
     // save the id of the provider to identify it the next time.
     const QString photoSourceId = ui->comboDefaultPhotoSource->itemData(
